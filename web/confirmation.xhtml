@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: daniel
+  Date: 5/05/15
+  Time: 16:31
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Pagina de confirmacion</title>
+    <h:outputStylesheet library="css" name="styles.css"/>
+</h:head>
+
+<h:body>
+    <h2>Pagina de confirmacion</h2>
+    <h:panelGrid columns="2"
+                 columnClasses=".alinder-bold,normal">
+        <h:outputText value="Saludo: "/>
+        <h:outputText value="#{registrationBean.saludo}"/>
+        <h:outputText value="#{registrationBean.nombre}"/>
+        <h:outputText value="#{registrationBean.apellidos}"/>
+        <h:outputText value="#{registrationBean.edad}"/>
+        <h:outputText value="#{registrationBean.email}"/>
+    </h:panelGrid>
+</h:body>
+
+</html>

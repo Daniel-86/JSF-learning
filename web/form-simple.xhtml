@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: daniel
+  Date: 5/05/15
+  Time: 15:23
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+    <h:outputStylesheet library="css" name="styles.css"/>
+</h:head>
+
+<h:body>
+    <h3>Página de registro</h3>
+    <h:form>
+        <h:panelGrid columns="3"
+                     columnClasses="alinder,alinizq,alinizq">
+            <h:outputLabel value="Saludo: " for="saludo"/>
+            <h:selectOneMenu id="saludo" label="Saludo"
+                             value="#{registrationBean.saludo}">
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="Sr." itemValue="SR"/>
+                <f:selectItem itemLabel="Srs." itemValue="SRS"/>
+                <f:selectItem itemLabel="Srta." itemValue="SRTA"/>
+                <f:selectItem itemLabel="Sra." itemValue="SRA"/>
+                <f:selectItem itemLabel="Dr." itemValue="DR"/>
+            </h:selectOneMenu>
+            <h:message for="saludo"/>
+
+            <h:outputLabel value="Nombre: " for="nombre"/>
+            <h:inputText id="nombre" label="Nombre"
+                         required="true"
+                         value="#{registrationBean.nombre}"/>
+            <h:message for="nombre"/>
+
+            <h:outputLabel value="Apellidos: " for="apellidos"/>
+            <h:inputText id="apellidos" label="Apellidos"
+                         required="true"
+                         value="#{registrationBean.apellidos}"/>
+            <h:message for="apellidos"/>
+
+            <h:outputLabel value="Edad: " for="edad"/>
+            <h:inputText id="edad" label="Edad"
+                         size="2"
+                         value="#{registrationBean.edad}"/>
+            <h:message for="edad"/>
+
+            <h:outputLabel value="Email: " for="email"/>
+            <h:inputText id="email" label=""
+                         required="true"
+                         value="#{registrationBean.email}">
+                    <f:validator validatorId="emailValidator"/>
+            </h:inputText>
+            <h:message for="email"/>
+
+            <h:panelGroup/>
+            <h:commandButton id="register" value="Registrar"
+                             action="confirmation"/>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: daniel
+  Date: 9/05/15
+  Time: 18:15
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<cc:interface>
+    <cc:attribute name="addrType"/>
+    <cc:attribute name="managedBean" required="true"/>
+</cc:interface>
+
+<cc:implementation>
+    <h:panelGrid columns="2">
+        <f:facet name="header">
+            <h:outputText value="#{cc.attrs.addrType} Direccion"/>
+        </f:facet>
+        <h:outputLabel for="linea1" value="Linea 1"/>
+        <h:inputText id="linea1" value="#{cc.attrs.managedBean.linea1}"/>
+    </h:panelGrid>
+</cc:implementation>
+
+</html>
